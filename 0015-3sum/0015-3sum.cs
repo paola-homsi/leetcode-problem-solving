@@ -1,6 +1,5 @@
 public class Solution {
     public IList<IList<int>> ThreeSum(int[] nums) {
-        
         List<IList<int>> result = new List<IList<int>>();
         HashSet<string> seen = new HashSet<string>();
         
@@ -17,8 +16,9 @@ public class Solution {
             while(left < right){
                 sum = nums[i] + nums[left] + nums[right];
                 if(sum == 0){
-                    if(!seen.Contains(nums[i] +""+ nums[left]+""+ nums[right])){
-                        seen.Add(nums[i] +""+ nums[left]+""+ nums[right]);
+                    string key = nums[i] +""+ nums[left]+""+ nums[right];
+                    if(!seen.Contains(key)){
+                        seen.Add(key);
                         result.Add(new List<int> (){ nums[i], nums[left], nums[right]});
                     }
                     
